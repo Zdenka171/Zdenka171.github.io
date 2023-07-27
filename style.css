@@ -9,8 +9,10 @@ html {
 }
 
 .cover {
-    max-width: 1200px;
+    width: 960px;
     margin: 0 auto;
+    background: rgb(236, 177, 118);
+	box-shadow: 0 0 20px rgba(235, 137, 8, 0.644);
 }
 
 .ListA,
