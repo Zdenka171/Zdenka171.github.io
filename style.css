@@ -1,0 +1,24 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+.cover {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.ListA,
+.ListB {
+    text-align: justify;
+    color: darkblue;
+}
+
+a {
+    font-weight: bold;
+}
