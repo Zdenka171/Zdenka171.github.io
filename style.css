@@ -14,6 +14,7 @@ html {
     padding: 10px;
     background: rgb(236, 177, 118);
 	box-shadow: 0 0 20px rgba(235, 137, 8, 0.644);
+    text-align: center;
 }
 
 .ListA,
