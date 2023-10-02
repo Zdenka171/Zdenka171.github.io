@@ -34,7 +34,7 @@ EB.Barcode.enable({}, scanReceived);
             // Empty property hash, '{}' loads default values for the scanner.
         }
 
-        function unloadEvent(){
-            EB.Barcode.disable();
+       // function unloadEvent(){
+        //    EB.Barcode.disable();
             // Disable Barcode on unload of page to free it up for other operations.
-        }
+        // }
