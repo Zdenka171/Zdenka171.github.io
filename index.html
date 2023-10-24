@@ -8,28 +8,12 @@
 
     <title>Zdenka's EB Fun Testing</title>
     <link rel="stylesheet" href="style.css">
-    <script src="javascript.js"></script>
+   
     <script type="text/javascript" charset="utf-8" src="ebapi-modules.js"></script>
     <script type="text/javascript" charset="utf-8" src="elements.js"></script>
     <script type="text/javascript" charset="utf-8" src="ebapi.js"></script>
     <script type="text/javascript" charset="utf-8" src="eb.barcode.js"></script>
-
-    <script>
-    const x = document.getElementById("demo");
- 
-    function getLocation() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-      } else { 
-        x.innerHTML = "Geolocation is not supported by this browser.";
-      }
-    }
-     
-    function showPosition(position) {
-      x.innerHTML = "Latitude: " + position.coords.latitude + 
-      "<br>Longitude: " + position.coords.longitude;
-    }
-</script>
+    <script src="javascript.js"></script>
 
 <!--  <script type="text/javascript">
         buttonBar1.show();
@@ -105,9 +89,9 @@
                 </div>
            
                 <h2>HTML Geolocation</h2>
-                <p>Click the button to get your coordinates.</p>
+                <p>Click the button to get your coordinates</p>
                     <div>
-                        <input type="button" value="Get Location" onclick="getLocation()" />
+                        <input type="button" value="Get Location" onclick="getLocation();" />
                         <p id="demo"></p>     
                     </div>
                 
