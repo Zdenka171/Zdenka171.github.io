@@ -17,24 +17,41 @@ function clearInput() {
     }
 }
 
-EB.Barcode.enable({}, scanReceived);
-        function scanReceived(params){
-            // No data or no timestamp, scan failed.
-            if(params['data']== "" || params['time']==""){
-                document.getElementById('display').innerHTML = "Failed!";
-                return;
-            }
-            // Data and timestamp exist, barcode successful, show results
-            var displayStr = "Barcode Data: " + params['data']+"<br>Time: "+params['time'];
-            document.getElementById("display").innerHTML = displayStr;
-        }
+const x = document.getElementById("demo");
+ 
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+ 
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
 
-        function enableScanners(){
+
+
+// EB.Barcode.enable({}, scanReceived);
+       // function scanReceived(params){
+            // No data or no timestamp, scan failed.
+         //   if(params['data']== "" || params['time']==""){
+           //     document.getElementById('display').innerHTML = "Failed!";
+             //   return;
+            // }
+            // Data and timestamp exist, barcode successful, show results
+          //  var displayStr = "Barcode Data: " + params['data']+"<br>Time: "+params['time'];
+           // document.getElementById("display").innerHTML = displayStr;
+        //}
+
+        //function enableScanners(){
             
             // Empty property hash, '{}' loads default values for the scanner.
-        }
+        //}
 
-       function unloadEvent(){
-        EB.Barcode.disable();
+       //function unloadEvent(){
+        //EB.Barcode.disable();
             // Disable Barcode on unload of page to free it up for other operations.
-       }
+      //}

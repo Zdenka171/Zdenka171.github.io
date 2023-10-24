@@ -15,7 +15,7 @@
     <script type="text/javascript" charset="utf-8" src="eb.barcode.js"></script>
 
 
-    <script type="text/javascript">
+<!--  <script type="text/javascript">
         buttonBar1.show();
         buttonBar2.show();
         buttonBar3.show();
@@ -24,11 +24,11 @@
         buttonBar6.show();
         buttonBar7.show();
         buttonBar8.show();
-    </script>
+    </script> -->  
 
 </head>
 
-<body onunload='unloadEvent()'>
+<body>
 
     <div class="container">
         <div class="header">
@@ -88,15 +88,13 @@
                     <div id="submitted" class="items">Click on the item below to remove from the list</div>
                 </div>
            
-                <h2>EB scanning</h2>
+                <h2>HTML Geolocation</h2>
+                <p>Click the button to get your coordinates.</p>
                     <div>
-                        <div id="display">
-                            Barcode Data: <br>
-                            Time: <br>
-                        </div>
-                        <button onclick="enableScanners()">Enable Barcode Scanners</button>
+                        <button onclick="getLocation()">Try It</button>
+                        <p id="demo"></p>     
                     </div>
-                </div>
+                
 
             </div>
 
