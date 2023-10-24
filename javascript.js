@@ -17,21 +17,42 @@ function clearInput() {
     }
 }
 
+var button =document.getElementById('los'); 
+button.addEventListener ('click', ermittlePosition);
+var ausgabe = document.getElementById('ausgabe');
 
- 
-function getLocation() {
-  const x = document.getElementById("demo");
+function ermittlePosition() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
+      navigator.geolocation.getCurrentPosition(zeigePosition, zeigeFehler);
   } else { 
-    x.innerHTML = "Geolocation is not supported by this browser.";
+      ausgabe.innerHTML = 'Ihr Browser unterstützt keine Geolocation.';
   }
 }
- 
-function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude;
+
+function zeigePosition(position) {
+  ausgabe.innerHTML = "Ihre Koordinaten sind:<br> Breite: " + position.coords.latitude + 
+  "<br>Länge: " + position.coords.longitude +'<br>Genaugikeit: ' + position.coords.accuracy;	
 }
+
+function zeigeFehler(error) {
+  switch(error.code) {
+      case error.PERMISSION_DENIED:
+          ausgabe.innerHTML = "Benutzer lehnte Standortabfrage ab."
+          break;
+      case error.POSITION_UNAVAILABLE:
+          ausgabe.innerHTML = "Standortdaten sind nicht verfügbar."
+          break;
+      case error.TIMEOUT:
+          ausgabe.innerHTML = "Die Standortabfrage dauerte zu lange (Time-out)."
+          break;
+      case error.UNKNOWN_ERROR:
+          ausgabe.innerHTML = "unbekannter Fehler."
+          break;
+  }
+}
+
+ 
+
 
 
 
