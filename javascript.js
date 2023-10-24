@@ -17,9 +17,10 @@ function clearInput() {
     }
 }
 
-const x = document.getElementById("demo");
+
  
 function getLocation() {
+  const x = document.getElementById("demo");
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
   } else { 
