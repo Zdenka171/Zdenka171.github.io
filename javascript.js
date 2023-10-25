@@ -17,40 +17,20 @@ function clearInput() {
     }
 }
 
-var button =document.getElementById('los'); 
-button.addEventListener ('click', ermittlePosition);
-var ausgabe = document.getElementById('ausgabe');
-
-function ermittlePosition() {
-  if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(zeigePosition, zeigeFehler);
+function GetLocation() {
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
   } else { 
-      ausgabe.innerHTML = 'Ihr Browser unterstützt keine Geolocation.';
+    document.getElementById("demo").innerHTML =
+    "Geolocation is not supported by this browser.";
+  }
+  
+  function showPosition(position) {
+    document.getElementById("demo").innerHTML =
+    "Latitude: " + position.coords.latitude + "<br>" +
+    "Longitude: " + position.coords.longitude;
   }
 }
-
-function zeigePosition(position) {
-  ausgabe.innerHTML = "Ihre Koordinaten sind:<br> Breite: " + position.coords.latitude + 
-  "<br>Länge: " + position.coords.longitude +'<br>Genaugikeit: ' + position.coords.accuracy;	
-}
-
-function zeigeFehler(error) {
-  switch(error.code) {
-      case error.PERMISSION_DENIED:
-          ausgabe.innerHTML = "Benutzer lehnte Standortabfrage ab."
-          break;
-      case error.POSITION_UNAVAILABLE:
-          ausgabe.innerHTML = "Standortdaten sind nicht verfügbar."
-          break;
-      case error.TIMEOUT:
-          ausgabe.innerHTML = "Die Standortabfrage dauerte zu lange (Time-out)."
-          break;
-      case error.UNKNOWN_ERROR:
-          ausgabe.innerHTML = "unbekannter Fehler."
-          break;
-  }
-}
-
   // EB.Barcode.enable({}, scanReceived);
        // function scanReceived(params){
             // No data or no timestamp, scan failed.
