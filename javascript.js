@@ -30,6 +30,8 @@ function showPosition(position) {
     "Latitude: " + position.coords.latitude + "<br>" +
     "Longitude: " + position.coords.longitude;
 }
+
+
   // EB.Barcode.enable({}, scanReceived);
        // function scanReceived(params){
             // No data or no timestamp, scan failed.
