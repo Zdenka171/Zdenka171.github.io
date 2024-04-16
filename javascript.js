@@ -32,6 +32,8 @@ function showPosition(position) {
 }
 
 
+
+
   // EB.Barcode.enable({}, scanReceived);
        // function scanReceived(params){
             // No data or no timestamp, scan failed.
