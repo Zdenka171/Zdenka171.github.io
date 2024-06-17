@@ -1,3 +1,5 @@
+EB.ScreenOrientation.leftHanded();
+
 function submit() {
     var newData = document.createElement("div");
     newData.innerHTML = document.getElementById("box").value;
