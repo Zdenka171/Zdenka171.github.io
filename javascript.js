@@ -53,6 +53,28 @@ function unloadEvent(){
   EB.Barcode.disable();
   // Disable Barcode on unload of page to free it up for other operations.
 }
+    function startNfcReader() {
+      // Check support and enable adapter if necessary
+      if (!EB.EzNFC.isSupported) {
+        alert("NFC not supported on this device.");
+        return;
+      }
+      if (!EB.EzNFC.isEnabled) {
+        EB.EzNFC.enableAdapter();
+      }
 
+      // Start reading automatically
+      EB.EzNFC.enableRead(onTagRead);
+    }
+
+    function onTagRead(dat) {
+      // Get TagIDHexa from callback
+      var tagHex = dat.tagidhexa || "";
+      // Put it into the text box
+     document.getElementById("demo").innerHTML = tagHex;
+    }
+
+    // Auto start when page loads
+    window.onload = startNfcReader;
 
 
