@@ -71,7 +71,7 @@ function unloadEvent(){
       // Get TagIDHexa from callback
       var tagHex = dat.tagidhexa || "";
       // Put it into the text box
-     document.getElementById("box").innerHTML = tagHex;
+     document.getElementById("display").innerHTML = tagHex;
     }
 
     // Auto start when page loads
