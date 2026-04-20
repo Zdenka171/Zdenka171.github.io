@@ -53,7 +53,7 @@ function unloadEvent(){
   EB.Barcode.disable();
   // Disable Barcode on unload of page to free it up for other operations.
 }
-    function startNfcReader() {
+    /*function startNfcReader() {
       // Check support and enable adapter if necessary
       if (!EB.EzNFC.isSupported) {
         alert("NFC not supported on this device.");
@@ -87,3 +87,4 @@ function enableNfcCallback1(dat) {
     window.onload = startNfcReader;
 
 
+*/
