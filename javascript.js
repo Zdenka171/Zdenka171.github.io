@@ -64,15 +64,24 @@ function unloadEvent(){
       }
 
       // Start reading automatically
-      EB.EzNFC.enableRead(onTagRead);
+      EB.EzNFC.enableRead(enableNfcCallback1);
     }
 
-    function onTagRead(dat) {
-      // Get TagIDHexa from callback
-      var tagHex = dat.tagidhexa || "";
-      // Put it into the text box
-     document.getElementById("display").innerHTML = tagHex;
-    }
+function enableNfcCallback1(dat) {
+	var ID = dat.id;
+	var Type = dat.type;
+	var TNF = dat.tnf;
+	var Payload = dat.payload;
+	var EncodingFormat = dat.encodingformat;
+	var Result = dat.result;
+	var TagIDHexa = dat.tagidhexa;
+	var TagIDDecimal = dat.nfctagdecid;
+	var TagIDReversed = dat.nfctagreversedid;
+	var ShowData = "ID: " + ID + "<BR>Type: " + Type + "<BR>TNF: " + TNF + "<BR>Payload: " + Payload + "<BR>EncodingFormat: " + EncodingFormat + "<BR>Result: " + Result + "<BR>TagIDHexa: " + TagIDHexa + "<BR>TagIDDecimal: " + TagIDDecimal+ "<BR>TagIDReversed: " + TagIDReversed  ;
+	
+	document.getElementById("display").innerHTML = ShowData;
+}
+
 
     // Auto start when page loads
     window.onload = startNfcReader;
