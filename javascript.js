@@ -79,7 +79,7 @@ function enableNfcCallback1(dat) {
 	var TagIDReversed = dat.nfctagreversedid;
 	var ShowData = "ID: " + ID + "<BR>Type: " + Type + "<BR>TNF: " + TNF + "<BR>Payload: " + Payload + "<BR>EncodingFormat: " + EncodingFormat + "<BR>Result: " + Result + "<BR>TagIDHexa: " + TagIDHexa + "<BR>TagIDDecimal: " + TagIDDecimal+ "<BR>TagIDReversed: " + TagIDReversed  ;
 	
-	document.getElementById("display").innerHTML = ShowData;
+	document.getElementById("display1").innerHTML = ShowData;
 }
 
 
